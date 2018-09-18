@@ -2,42 +2,52 @@
   <div>
     <div class="weui-flex">
       <div class="weui-flex__item">
-        <div class="placeholder">weui</div>
+        <swiper
+          indicator-dots
+          autoplay
+        >
+          <block
+            v-for="(url, index) in imgUrls"
+            :key="index"
+          >
+            <swiper-item>
+              <image
+                :src="url"
+                class="slide-image"
+              />
+            </swiper-item>
+            </block>
+            </swiper>
       </div>
     </div>
-    <div class="weui-flex">
-      <div class="weui-flex__item">
-        <div class="placeholder">weui</div>
-      </div>
-      <div class="weui-flex__item">
-        <div class="placeholder">weui</div>
-      </div>
+    <div
+      class="btn-area">
+            <button
+          open-type="openSetting"
+        >设置</button>
+        <button
+          open-type="contact"
+        >客服</button>
+        <button
+          open-type="getUserInfo"
+          lang="zh_CN"
+          bindgetuserinfo="onGotUserInfo"
+        >信息</button>
+  </div>
+  <div class="weui-flex">
+    <div class="weui-flex__item">
+      <div class="placeholder">weui</div>
     </div>
-    <div class="weui-flex">
-      <div class="weui-flex__item">
-        <div class="placeholder">weui</div>
-      </div>
-      <div class="weui-flex__item">
-        <div class="placeholder">weui</div>
-      </div>
-      <div class="weui-flex__item">
-        <div class="placeholder">weui</div>
-      </div>
+    <div class="weui-flex__item">
+      <div class="placeholder">weui</div>
     </div>
-    <div class="weui-flex">
-      <div class="weui-flex__item">
-        <div class="placeholder">weui</div>
-      </div>
-      <div class="weui-flex__item">
-        <div class="placeholder">weui</div>
-      </div>
-      <div class="weui-flex__item">
-        <div class="placeholder">weui</div>
-      </div>
-      <div class="weui-flex__item">
-        <div class="placeholder">weui</div>
-      </div>
+    <div class="weui-flex__item">
+      <div class="placeholder">weui</div>
     </div>
+    <div class="weui-flex__item">
+      <div class="placeholder">weui</div>
+    </div>
+  </div>
   </div>
 </template>
 
@@ -47,8 +57,11 @@ import card from '@/components/card'
 export default {
   data () {
     return {
-      motto: 'Hello World',
-      userInfo: {}
+      imgUrls: [
+        'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
+        'http://img06.tooopen.com/images/20160818/tooopen_sy_175866434296.jpg',
+        'http://img06.tooopen.com/images/20160818/tooopen_sy_175833047715.jpg'
+      ]
     }
   },
 
@@ -86,4 +99,26 @@ export default {
 </script>
 
 <style scoped>
+.card {
+  height: 200px;
+}
+.slide-image {
+  width: 100%;
+  height: 200px;
+}
+.btn-area {
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ height: 100px;
+ border: solid 1px black;
+}
+.btn-area button{
+   background-color: blueviolet;
+   width: 50px;
+   height: 50px;
+   border-radius: 50%;
+   font-size: 12px;
+   padding: 15px 0;
+}
 </style>

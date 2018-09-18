@@ -1,19 +1,31 @@
 <template>
-  <div>
-    <p class="card">
-      {{text}}
+  <div class="container">
+    <p class="title">
+      {{title}}
     </p>
+    <div class="body">
+        <span>
+          {{desc}}
+        </span>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
-  props: ['text']
+  props: ['title', 'desc']
 }
 </script>
 
-<style>
-.card {
+<style scoped>
+.container{
+   padding: 20px;
+   background-color: chartreuse;
+}
+.title {
   padding: 10px;
+}
+.body{
+  display: block;
 }
 </style>
